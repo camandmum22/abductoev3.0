@@ -23,19 +23,22 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:id ="@+id/ca00"
-                android:alpha="0.50"/>
+                android:alpha="0.50"
+                android:onClick="onBut1"/>
 
             <ImageButton
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:id ="@+id/ca01"
-                android:alpha="0.50"/>
+                android:alpha="0.50"
+                android:onClick="onBut2"/>
 
             <ImageButton
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:id ="@+id/ca02"
-                android:alpha="0.50"/>
+                android:alpha="0.50"
+                android:onClick="onBut3"/>
 
         </TableRow>
         <TableRow
@@ -45,19 +48,22 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:id ="@+id/ca10"
-                android:alpha="0.50"/>
+                android:alpha="0.50"
+                android:onClick="onBut4"/>
 
             <ImageButton
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:id ="@+id/ca11"
-                android:alpha="0.50"/>
+                android:alpha="0.50"
+                android:onClick="onBut5"/>
 
             <ImageButton
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:id ="@+id/ca12"
-                android:alpha="0.50"/>
+                android:alpha="0.50"
+                android:onClick="onBut6"/>
 
 
 
@@ -69,19 +75,22 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:id ="@+id/ca20"
-                android:alpha="0.50"/>
+                android:alpha="0.50"
+                android:onClick="onBut7"/>
 
             <ImageButton
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:id ="@+id/ca21"
-                android:alpha="0.50"/>
+                android:alpha="0.50"
+                android:onClick="onBut8"/>
 
             <ImageButton
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:id ="@+id/ca22"
-                android:alpha="0.50"/>
+                android:alpha="0.50"
+                android:onClick="onBut9"/>
 
 
 
