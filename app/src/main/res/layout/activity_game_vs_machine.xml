@@ -4,9 +4,91 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="ufo.alien.space.ab_duc_toe_v2.GameVsMachine">
+    tools:context="ufo.alien.space.ab_duc_toe_v2.GameVsMachine"
+    android:background="@drawable/blackbackground">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent">
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id ="@+id/ca00"
+                android:alpha="0.50"/>
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id ="@+id/ca01"
+                android:alpha="0.50"/>
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id ="@+id/ca02"
+                android:alpha="0.50"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent">
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id ="@+id/ca10"
+                android:alpha="0.50"/>
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id ="@+id/ca11"
+                android:alpha="0.50"/>
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id ="@+id/ca12"
+                android:alpha="0.50"/>
+
+
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent">
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id ="@+id/ca20"
+                android:alpha="0.50"/>
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id ="@+id/ca21"
+                android:alpha="0.50"/>
+
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id ="@+id/ca22"
+                android:alpha="0.50"/>
+
+
+
+        </TableRow>
+
+
+
+    </TableLayout>
 
 </RelativeLayout>

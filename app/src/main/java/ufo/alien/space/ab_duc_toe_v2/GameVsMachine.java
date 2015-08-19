@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -18,16 +19,15 @@ import java.util.Random;
 
 public class GameVsMachine extends Activity {
 
-    private Button but1;
-    private Button but2;
-    private Button but3;
-    private Button but4;
-    private Button but5;
-    private Button but6;
-    private Button but7;
-    private Button but8;
-    private Button but9;
-    private Button butLimpiar;
+    private ImageButton but1;
+    private ImageButton but2;
+    private ImageButton but3;
+    private ImageButton but4;
+    private ImageButton but5;
+    private ImageButton but6;
+    private ImageButton but7;
+    private ImageButton but8;
+    private ImageButton but9;
 
     private String casilla1;
     private String casilla2;
@@ -50,18 +50,16 @@ public class GameVsMachine extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_vs_person);
 
-        but1=(Button) findViewById(R.id.but1);
-        but2=(Button) findViewById(R.id.but2);
-        but3=(Button) findViewById(R.id.but3);
-        but4=(Button) findViewById(R.id.but4);
-        but5=(Button) findViewById(R.id.but5);
-        but6=(Button) findViewById(R.id.but6);
-        but7=(Button) findViewById(R.id.but7);
-        but8=(Button) findViewById(R.id.but8);
-        but9=(Button) findViewById(R.id.but9);
-        butLimpiar=(Button) findViewById(R.id.butLimpiar);
-        butLimpiar.setEnabled(false);
-        butLimpiar.setVisibility(View.INVISIBLE);
+        but1=(ImageButton) findViewById(R.id.ca00);
+        but2=(ImageButton) findViewById(R.id.ca01);
+        but3=(ImageButton) findViewById(R.id.ca02);
+        but4=(ImageButton) findViewById(R.id.ca10);
+        but5=(ImageButton) findViewById(R.id.ca11);
+        but6=(ImageButton) findViewById(R.id.ca12);
+        but7=(ImageButton) findViewById(R.id.ca20);
+        but8=(ImageButton) findViewById(R.id.ca21);
+        but9=(ImageButton) findViewById(R.id.ca22);
+
 
         casilla1=new String("-1");
         casilla2=new String("-1");
@@ -499,8 +497,7 @@ public class GameVsMachine extends Activity {
         alert.show();
 
         Toast.makeText(getApplicationContext(), "You Can Try Again!!!", Toast.LENGTH_SHORT);
-        butLimpiar.setEnabled(true);
-        butLimpiar.setVisibility(View.VISIBLE);
+
     }
 
     public void fin(){
