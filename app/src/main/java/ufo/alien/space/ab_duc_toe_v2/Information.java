@@ -17,7 +17,7 @@ public class Information extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information);
         //Play Sound
-        mp = MediaPlayer.create(getApplicationContext(), R.drawable.ufo1);
+        mp = MediaPlayer.create(getApplicationContext(), R.drawable.info);
         mp.setLooping(true);
         /*mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override

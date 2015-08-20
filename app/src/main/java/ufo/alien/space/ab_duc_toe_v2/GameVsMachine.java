@@ -56,7 +56,7 @@ public class GameVsMachine extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mySound = MediaPlayer.create(this, R.raw.ufo1);
+        mySound = MediaPlayer.create(this, R.drawable.vsMachine);
         mySound.start();
         setContentView(R.layout.activity_game_vs_machine);
 

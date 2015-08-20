@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
         playVsMachine=(Button) findViewById(R.id.playVsMachine);
 
         //Play Sound
-        mp = MediaPlayer.create(getApplicationContext(), R.drawable.ufo1);
+        mp = MediaPlayer.create(getApplicationContext(), R.drawable.main);
         mp.setLooping(true);
         /*mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override

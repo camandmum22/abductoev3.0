@@ -51,7 +51,7 @@ public class GameVsPerson extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_vs_person);
-        mySound = MediaPlayer.create(this, R.raw.ufo1);
+        mySound = MediaPlayer.create(this, R.drawable.vsPerson);
         mySound.start();
         but1=(ImageButton) findViewById(R.id.ca00);
         but2=(ImageButton) findViewById(R.id.ca01);
