@@ -32,7 +32,8 @@
         android:background="@mipmap/vs_machine"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"/>
 
     <Button
         android:layout_width="150dp"
@@ -40,18 +41,21 @@
         android:onClick="vsOther"
         android:id="@+id/playVsOther"
         android:background="@mipmap/vs_other"
-        android:layout_below="@+id/textView"
-        android:layout_marginTop="40dp"
+        android:layout_below="@+id/playVsMachine"
+        android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/playVsMachine"
-        android:layout_toEndOf="@+id/playVsMachine" />
+        android:layout_toEndOf="@+id/playVsMachine"
+       />
 
     <Button
         android:layout_width="150dp"
         android:layout_height="80dp"
         android:onClick="acerca"
         android:id="@+id/acerca"
+        android:layout_marginTop="40dp"
         android:background="@mipmap/help"
-        android:layout_below="@+id/playVsMachine"
+        android:layout_below="@+id/playVsOther"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        />
 </RelativeLayout>

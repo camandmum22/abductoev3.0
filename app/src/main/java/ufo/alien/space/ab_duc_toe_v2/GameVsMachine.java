@@ -56,8 +56,6 @@ public class GameVsMachine extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mySound = MediaPlayer.create(this, R.drawable.vsMachine);
-        mySound.start();
         setContentView(R.layout.activity_game_vs_machine);
 
         but1=(ImageButton) findViewById(R.id.ca00);
@@ -110,7 +108,7 @@ public class GameVsMachine extends Activity {
         turnoCPU = false;
 
         //Play Sound
-        mp = MediaPlayer.create(getApplicationContext(), R.drawable.ufo1);
+        mp = MediaPlayer.create(getApplicationContext(), R.drawable.vs_machine);
         mp.setLooping(true);
         /*mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override

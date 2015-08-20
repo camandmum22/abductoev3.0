@@ -51,8 +51,7 @@ public class GameVsPerson extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_vs_person);
-        mySound = MediaPlayer.create(this, R.drawable.vsPerson);
-        mySound.start();
+
         but1=(ImageButton) findViewById(R.id.ca00);
         but2=(ImageButton) findViewById(R.id.ca01);
         but3=(ImageButton) findViewById(R.id.ca02);
@@ -92,7 +91,7 @@ public class GameVsPerson extends Activity {
         mensaje4 = "Exit";
 
         //Play Sound
-        mp = MediaPlayer.create(getApplicationContext(), R.drawable.ufo1);
+        mp = MediaPlayer.create(getApplicationContext(), R.drawable.vs_person);
         mp.setLooping(true);
         /*mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
