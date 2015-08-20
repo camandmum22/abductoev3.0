@@ -5,7 +5,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="ufo.alien.space.ab_duc_toe_v2.GameVsPerson"
-    android:background="@drawable/blackbackground">
+    android:background="@drawable/wall"
+    >
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -17,78 +18,101 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:minWidth="@dimen/width_row"
+            android:minHeight="@dimen/heigh_square">
 
             <ImageButton
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id ="@+id/ca00"
-                android:alpha="0.50"/>
+                android:alpha="0.50"
+                android:onClick="onBut1"
+                android:scaleType="fitXY"/>
 
             <ImageButton
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id ="@+id/ca01"
-                android:alpha="0.50"/>
+                android:alpha="0.50"
+                android:onClick="onBut2"
+                android:scaleType="fitXY"/>
 
             <ImageButton
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id ="@+id/ca02"
-                android:alpha="0.50"/>
+                android:alpha="0.50"
+                android:onClick="onBut3"
+                android:scaleType="fitXY"/>
 
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:minWidth="@dimen/width_row"
+            android:minHeight="@dimen/heigh_square">
             <ImageButton
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id ="@+id/ca10"
-                android:alpha="0.50"/>
+                android:alpha="0.50"
+                android:onClick="onBut4"
+                android:scaleType="fitXY"/>
 
             <ImageButton
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id ="@+id/ca11"
-                android:alpha="0.50"/>
+                android:alpha="0.50"
+                android:onClick="onBut5"
+                android:scaleType="fitXY"/>
 
             <ImageButton
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id ="@+id/ca12"
-                android:alpha="0.50"/>
-
-
-
+                android:alpha="0.50"
+                android:onClick="onBut6"
+                android:scaleType="fitXY"/>
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:minWidth="@dimen/width_row"
+            android:minHeight="@dimen/heigh_square">
             <ImageButton
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id ="@+id/ca20"
-                android:alpha="0.50"/>
+                android:alpha="0.50"
+                android:onClick="onBut7"
+                android:scaleType="fitXY"/>
 
             <ImageButton
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id ="@+id/ca21"
-                android:alpha="0.50"/>
+                android:alpha="0.50"
+                android:onClick="onBut8"
+                android:scaleType="fitXY"/>
 
             <ImageButton
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id ="@+id/ca22"
-                android:alpha="0.50"/>
-
-
-
+                android:alpha="0.50"
+                android:onClick="onBut9"
+                android:scaleType="fitXY"/>
         </TableRow>
-
-
-
     </TableLayout>
-
 </RelativeLayout>

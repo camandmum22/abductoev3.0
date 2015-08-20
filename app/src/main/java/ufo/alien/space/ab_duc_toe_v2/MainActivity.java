@@ -1,6 +1,8 @@
 package ufo.alien.space.ab_duc_toe_v2;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,23 +11,38 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
     private Button acerca;
     private Button playVsOther;
     private Button playVsMachine;
+    private MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         acerca=(Button) findViewById(R.id.acerca);
         playVsOther=(Button) findViewById(R.id.playVsOther);
         playVsMachine=(Button) findViewById(R.id.playVsMachine);
+
+        //Play Sound
+        mp = MediaPlayer.create(getApplicationContext(), R.drawable.ufo1);
+        mp.setLooping(true);
+        /*mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.reset();
+            }
+        });*/
+        mp.start();
+
     }
 
-    public void acreca(View view){
+    public void acerca(View view){
         Intent i = new Intent(this, Information.class);
         startActivity(i);
     }
@@ -60,15 +77,5 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-
-    public void unJugador(View view){
-        Intent intent= new Intent(this, GameVsMachine.class);
-        startActivity(intent);
-    }
-    public void dosJugadores(View view){
-        Intent intent= new Intent(this, GameVsPerson.class);
-        startActivity(intent);
     }
 }

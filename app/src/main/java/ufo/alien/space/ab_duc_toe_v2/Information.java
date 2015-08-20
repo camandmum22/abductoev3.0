@@ -1,17 +1,31 @@
 package ufo.alien.space.ab_duc_toe_v2;
 
+import android.app.Activity;
+import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class Information extends ActionBarActivity {
+public class Information extends Activity {
+
+    private MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information);
+        //Play Sound
+        mp = MediaPlayer.create(getApplicationContext(), R.drawable.ufo1);
+        mp.setLooping(true);
+        /*mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.reset();
+            }
+        });*/
+        mp.start();
     }
 
     @Override
