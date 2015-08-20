@@ -3,6 +3,9 @@ package ufo.alien.space.ab_duc_toe_v2;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -38,22 +41,28 @@ public class GameVsPerson extends Activity {
     private int jugador;
     //private String textofinal;
     private String mensaje;
+    private String mensaje2;
+    private String mensaje3;
+    private String mensaje4;
+    private MediaPlayer mySound;
+    private MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_vs_person);
-
+        mySound = MediaPlayer.create(this, R.raw.ufo1);
+        mySound.start();
         but1=(ImageButton) findViewById(R.id.ca00);
         but2=(ImageButton) findViewById(R.id.ca01);
         but3=(ImageButton) findViewById(R.id.ca02);
         but4=(ImageButton) findViewById(R.id.ca10);
+
         but5=(ImageButton) findViewById(R.id.ca11);
         but6=(ImageButton) findViewById(R.id.ca12);
         but7=(ImageButton) findViewById(R.id.ca20);
         but8=(ImageButton) findViewById(R.id.ca21);
         but9=(ImageButton) findViewById(R.id.ca22);
-
 
         casilla1=new String("-1");
         casilla2=new String("-1");
@@ -65,51 +74,85 @@ public class GameVsPerson extends Activity {
         casilla8=new String("-1");
         casilla9=new String("-1");
 
+        but1.setImageResource(R.mipmap.ufo);
+        but2.setImageResource(R.mipmap.ufo);
+        but3.setImageResource(R.mipmap.ufo);
+        but4.setImageResource(R.mipmap.ufo);
+        but5.setImageResource(R.mipmap.ufo);
+        but6.setImageResource(R.mipmap.ufo);
+        but7.setImageResource(R.mipmap.ufo);
+        but8.setImageResource(R.mipmap.ufo);
+        but9.setImageResource(R.mipmap.ufo);
+
         jugador = 0;
         //textofinal = "";
-        mensaje = "";
+        mensaje = "You're safe , the black team has been abducted";
+        mensaje2 = "Both teams have been destroyed";
+        mensaje3 = "You're safe , the white team has been abducted";
+        mensaje4 = "Exit";
+
+        //Play Sound
+        mp = MediaPlayer.create(getApplicationContext(), R.drawable.ufo1);
+        mp.setLooping(true);
+        /*mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.reset();
+            }
+        });*/
+        mp.start();
     }
 
     public void onBut1(View view){
         if(this.jugador==0 && view.isClickable()){
             casilla1 = "X";
-            but1.setBackgroundResource(R.drawable.cruz);//
+            but1.setImageResource(R.mipmap.cruz2);//
             view.setClickable(false);
 
             int fin = this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==0){
-                    mensaje="Win Crosses";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje,mensaje4);
                 }
 
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
             }
-            this.jugador=1;
+            if(fin != 2) {
+                this.jugador = 1;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
         else if (this.jugador==1 && view.isClickable()){
             casilla1 = "O";
-            but1.setBackgroundResource(R.drawable.circulo);//
+            but1.setImageResource(R.mipmap.circulo2);//
             view.setClickable(false);
 
             int fin= this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==1){
-                    mensaje="Win Circles";
-                    showDialog(mensaje, mensaje, mensaje);
+
+                    showDialog(mensaje, mensaje3, mensaje4);
                 }
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
             }
-            this.jugador=0;
+            if(fin != 2) {
+                this.jugador = 0;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
     }
@@ -117,44 +160,54 @@ public class GameVsPerson extends Activity {
     public void onBut2(View view){
         if(this.jugador==0 && view.isClickable()){
             casilla2 = "X";
-            but2.setBackgroundResource(R.drawable.cruz);//
+            but2.setImageResource(R.mipmap.cruz2);//
             view.setClickable(false);
 
             int fin = this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==0){
-                    mensaje="Win Crosses";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje,mensaje4);
                 }
 
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
 
             }
-            this.jugador=1;
+            if(fin != 2) {
+                this.jugador = 1;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
         else if (this.jugador==1 && view.isClickable()){
             casilla2 = "O";
-            but2.setBackgroundResource(R.drawable.circulo);//
+            but2.setImageResource(R.mipmap.circulo2);//
             view.setClickable(false);
 
             int fin= this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==1){
-                    mensaje="Win Circles";
-                    showDialog(mensaje, mensaje, mensaje);
+
+                    showDialog(mensaje, mensaje3, mensaje4);
                 }
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
             }
-            this.jugador=0;
+            if(fin != 2) {
+                this.jugador = 0;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
     }
@@ -162,44 +215,54 @@ public class GameVsPerson extends Activity {
     public void onBut3(View view){
         if(this.jugador==0 && view.isClickable()){
             casilla3 = "X";
-            but3.setBackgroundResource(R.drawable.cruz);//
+            but3.setImageResource(R.mipmap.cruz2);//
             view.setClickable(false);
 
             int fin = this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==0){
-                    mensaje="Win Crosses";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje,mensaje4);
                 }
 
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
 
             }
-            this.jugador=1;
+            if(fin != 2) {
+                this.jugador = 1;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
         else if (this.jugador==1 && view.isClickable()){
             casilla3 = "O";
-            but3.setBackgroundResource(R.drawable.circulo);//
+            but3.setImageResource(R.mipmap.circulo2);//
             view.setClickable(false);
 
             int fin= this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==1){
-                    mensaje="Win Circles";
-                    showDialog(mensaje, mensaje, mensaje);
+
+                    showDialog(mensaje, mensaje3, mensaje4);
                 }
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
             }
-            this.jugador=0;
+            if(fin != 2) {
+                this.jugador = 0;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
     }
@@ -207,44 +270,54 @@ public class GameVsPerson extends Activity {
     public void onBut4(View view){
         if(this.jugador==0 && view.isClickable()){
             casilla4 = "X";
-            but4.setBackgroundResource(R.drawable.cruz);//
+            but4.setImageResource(R.mipmap.cruz2);//
             view.setClickable(false);
 
             int fin = this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==0){
-                    mensaje="Win Crosses";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje,mensaje4);
                 }
 
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
 
             }
-            this.jugador=1;
+            if(fin != 2) {
+                this.jugador = 1;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
         else if (this.jugador==1 && view.isClickable()){
             casilla4 = "O";
-            but4.setBackgroundResource(R.drawable.circulo);//
+            but4.setImageResource(R.mipmap.circulo2);//
             view.setClickable(false);
 
             int fin= this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==1){
-                    mensaje="Win Circles";
-                    showDialog(mensaje, mensaje, mensaje);
+
+                    showDialog(mensaje, mensaje3, mensaje4);
                 }
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
             }
-            this.jugador=0;
+            if(fin != 2) {
+                this.jugador = 0;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
     }
@@ -252,44 +325,54 @@ public class GameVsPerson extends Activity {
     public void onBut5(View view){
         if(this.jugador==0 && view.isClickable()){
             casilla5 = "X";
-            but5.setBackgroundResource(R.drawable.cruz);//
+            but5.setImageResource(R.mipmap.cruz2);//
             view.setClickable(false);
 
             int fin = this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==0){
-                    mensaje="Win Crosses";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje,mensaje4);
                 }
 
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
 
             }
-            this.jugador=1;
+            if(fin != 2) {
+                this.jugador = 1;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
         else if (this.jugador==1 && view.isClickable()){
             casilla5 = "O";
-            but5.setBackgroundResource(R.drawable.circulo);//
+            but5.setImageResource(R.mipmap.circulo2);//
             view.setClickable(false);
 
             int fin= this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==1){
-                    mensaje="Win Circles";
-                    showDialog(mensaje, mensaje, mensaje);
+
+                    showDialog(mensaje, mensaje3, mensaje4);
                 }
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
             }
-            this.jugador=0;
+            if(fin != 2) {
+                this.jugador = 0;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
     }
@@ -297,44 +380,54 @@ public class GameVsPerson extends Activity {
     public void onBut6(View view){
         if(this.jugador==0 && view.isClickable()){
             casilla6 = "X";
-            but6.setBackgroundResource(R.drawable.cruz);//
+            but6.setImageResource(R.mipmap.cruz2);//
             view.setClickable(false);
 
             int fin = this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==0){
-                    mensaje="Win Crosses";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje,mensaje4);
                 }
 
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
 
             }
-            this.jugador=1;
+            if(fin != 2) {
+                this.jugador = 1;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
         else if (this.jugador==1 && view.isClickable()){
             casilla6 = "O";
-            but6.setBackgroundResource(R.drawable.circulo);//
+            but6.setImageResource(R.mipmap.circulo2);//
             view.setClickable(false);
 
             int fin= this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==1){
-                    mensaje="Win Circles";
-                    showDialog(mensaje, mensaje, mensaje);
+
+                    showDialog(mensaje, mensaje3, mensaje4);
                 }
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
             }
-            this.jugador=0;
+            if(fin != 2) {
+                this.jugador = 0;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
     }
@@ -342,44 +435,54 @@ public class GameVsPerson extends Activity {
     public void onBut7(View view){
         if(this.jugador==0 && view.isClickable()){
             casilla7 = "X";
-            but7.setBackgroundResource(R.drawable.cruz);//
+            but7.setImageResource(R.mipmap.cruz2);//
             view.setClickable(false);
 
             int fin = this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==0){
-                    mensaje="Win Crosses";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje,mensaje4);
                 }
 
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
 
             }
-            this.jugador=1;
+            if(fin != 2) {
+                this.jugador = 1;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
         else if (this.jugador==1 && view.isClickable()){
             casilla7 = "O";
-            but7.setBackgroundResource(R.drawable.circulo);//
+            but7.setImageResource(R.mipmap.circulo2);//
             view.setClickable(false);
 
             int fin= this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==1){
-                    mensaje="Win Circles";
-                    showDialog(mensaje, mensaje, mensaje);
+
+                    showDialog(mensaje, mensaje3, mensaje4);
                 }
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
             }
-            this.jugador=0;
+            if(fin != 2) {
+                this.jugador = 0;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
     }
@@ -387,44 +490,54 @@ public class GameVsPerson extends Activity {
     public void onBut8(View view){
         if(this.jugador==0 && view.isClickable()){
             casilla8 = "X";
-            but8.setBackgroundResource(R.drawable.cruz);//
+            but8.setImageResource(R.mipmap.cruz2);//
             view.setClickable(false);
 
             int fin = this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==0){
-                    mensaje="Win Crosses";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje,mensaje4);
                 }
 
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
 
             }
-            this.jugador=1;
+            if(fin != 2) {
+                this.jugador = 1;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
         else if (this.jugador==1 && view.isClickable()){
             casilla8 = "O";
-            but8.setBackgroundResource(R.drawable.circulo);//
+            but8.setImageResource(R.mipmap.circulo2);//
             view.setClickable(false);
 
             int fin= this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==1){
-                    mensaje="Win Circles";
-                    showDialog(mensaje, mensaje, mensaje);
+
+                    showDialog(mensaje, mensaje3, mensaje4);
                 }
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
             }
-            this.jugador=0;
+            if(fin != 2) {
+                this.jugador = 0;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
     }
@@ -432,57 +545,68 @@ public class GameVsPerson extends Activity {
     public void onBut9(View view){
         if(this.jugador==0 && view.isClickable()){
             casilla9 = "X";
-            but9.setBackgroundResource(R.drawable.cruz);//
+            but9.setImageResource(R.mipmap.cruz2);//
             view.setClickable(false);
 
             int fin = this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==0){
-                    mensaje="Win Crosses";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje,mensaje4);
                 }
 
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
 
             }
-            this.jugador=1;
+            if(fin != 2) {
+                this.jugador = 1;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
         else if (this.jugador==1 && view.isClickable()){
             casilla9 = "O";
-            but9.setBackgroundResource(R.drawable.circulo);//
+            but9.setImageResource(R.mipmap.circulo2);//
             view.setClickable(false);
 
             int fin= this.juegoAcabado();
 
             if(fin!=-1){
                 if(fin==1){
-                    mensaje="Win Circles";
-                    showDialog(mensaje, mensaje, mensaje);
+
+                    showDialog(mensaje, mensaje3, mensaje4);
                 }
                 else if(fin==2){
-                    mensaje="They tied";
-                    showDialog(mensaje,mensaje,mensaje);
+
+                    showDialog(mensaje,mensaje2,mensaje4);
                 }
             }
-            this.jugador=0;
+            if(fin != 2) {
+                this.jugador = 0;
+            }
+            else{//fin == 2
+                //showMessage()
+            }
 
         }
     }
 
-    public void showDialog(String mensaje, String titulo, String aceptar){
+    public void showDialog(String titulo, String mensaje, String aceptar){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(mensaje)
-                .setTitle(titulo)
+                .setTitle("")
                 .setCancelable(false)
                 .setNeutralButton(aceptar,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
+                                startActivity(new Intent(GameVsPerson.this, MainActivity.class));
                             }
                         });
         AlertDialog alert = builder.create();
@@ -578,39 +702,39 @@ public class GameVsPerson extends Activity {
 
     public void limpiar(View view){
         casilla1="-1";
-        but1.setBackgroundResource(R.drawable.vacia);
+        but1.setImageResource(R.color.transparent);
         but1.setClickable(true);
 
         casilla2="-1";
-        but2.setBackgroundResource(R.drawable.vacia);
+        but2.setImageResource(R.color.transparent);
         but2.setClickable(true);
 
         casilla3="-1";
-        but3.setBackgroundResource(R.drawable.vacia);
+        but3.setImageResource(R.color.transparent);
         but3.setClickable(true);
 
         casilla4="-1";
-        but4.setBackgroundResource(R.drawable.vacia);
+        but4.setImageResource(R.color.transparent);
         but4.setClickable(true);
 
         casilla5="-1";
-        but5.setBackgroundResource(R.drawable.vacia);
+        but5.setImageResource(R.color.transparent);
         but5.setClickable(true);
 
         casilla6="-1";
-        but6.setBackgroundResource(R.drawable.vacia);
+        but6.setImageResource(R.color.transparent);
         but6.setClickable(true);
 
         casilla7="-1";
-        but7.setBackgroundResource(R.drawable.vacia);
+        but7.setImageResource(R.color.transparent);
         but7.setClickable(true);
 
         casilla8="-1";
-        but8.setBackgroundResource(R.drawable.vacia);
+        but8.setImageResource(R.color.transparent);
         but8.setClickable(true);
 
         casilla9="-1";
-        but9.setBackgroundResource(R.drawable.vacia);
+        but9.setImageResource(R.color.transparent);
         but9.setClickable(true);
 
         jugador = 0;
