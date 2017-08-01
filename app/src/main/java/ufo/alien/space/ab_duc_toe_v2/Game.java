@@ -14,6 +14,7 @@ public class Game extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //matriz = new ImageButton[n][n];
         matriz = new ImageButton[3][3];
         matriz[0][0] =  (ImageButton) findViewById(R.id.ca00);
         matriz[0][1] =  (ImageButton) findViewById(R.id.ca01);
